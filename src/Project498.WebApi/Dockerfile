@@ -20,4 +20,5 @@ RUN dotnet publish "./Project498.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_ENVIRONMENT=Development
 ENTRYPOINT ["dotnet", "Project498.WebApi.dll"]
