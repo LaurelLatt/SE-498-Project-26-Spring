@@ -1,0 +1,7 @@
+﻿services:
+  project498.webapi:
+    image: project498.webapi
+    build:
+      context: .
+      dockerfile: Project498.WebApi/Dockerfile
+

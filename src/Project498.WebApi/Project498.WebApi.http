@@ -1,0 +1,11 @@
+@Project498.WebApi_HostAddress = http://localhost:5031
+
+GET {{Project498.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{Project498.WebApi_HostAddress}}/strings/reverse/hello
+Accept: application/json
+
+###
