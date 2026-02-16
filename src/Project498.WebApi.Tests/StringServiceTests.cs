@@ -22,4 +22,18 @@ public class StringServiceTests
 
         Assert.Equal(expected, result);
     }
+    
+    [Theory]
+    [InlineData("", "")] // empty
+    [InlineData(" ", " ")] // whitespace-only
+    [InlineData("hello", "hello")] // single word
+    [InlineData("Hello World", "World Hello")] // standard usecase
+    [InlineData("The quick brown fox", "fox brown quick The")]
+    [InlineData(" hello world ", "world hello")] // trims spaces
+    [InlineData("a b c", "c b a")] // multiple spaces
+    public void ReverseWords_CommonCases(string input, string expected)
+    {
+        var actual = _stringService.ReverseWords(input);
+        Assert.Equal(expected, actual);
+    }
 }
